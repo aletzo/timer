@@ -79,7 +79,8 @@ $( '#reset' ).click( function() {
 
     $( this ).addClass( 'hidden' );
 
-    $( '#pause' ).addClass( 'hidden' );
+    $( '#pause' ).addClass( 'hidden' )
+                 .html( 'pause' );
 
     $( '#start' ).removeClass( 'hidden' );
 
