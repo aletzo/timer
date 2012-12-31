@@ -1,0 +1,83 @@
+body {
+    background: limegreen;
+    font-family: Helvetica;
+    font-size: 30px;
+}
+
+.break {
+    background: red;
+}
+
+.hidden {
+    display: none;
+}
+
+#page {
+    margin: 100px auto 0;
+    width: 900px;
+}
+
+label {
+    font-size: 0.4em;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+#lapDuration {
+    top: 10px;
+}
+#breakDuration {
+    top: 30px;
+}
+
+p {
+    text-align: center;
+}
+
+.break #lapTime {
+    display: none;
+}
+
+#breakTime {
+    display: none;
+}
+
+.break #breakTime {
+    display: block;
+}
+
+label input {
+    text-align: right;
+    width: 32px;
+}
+
+#time {
+    text-align: center;
+    width: 100%;
+}
+#time span {
+    font-size: 1.2em;
+}
+
+#laps span {
+    font-size: 4em;
+}
+a {
+    background: #000;
+    color: #fff;
+    padding: 50px 100px;
+    text-decoration: none;
+}
+a:hover {
+    background: #444;
+}
+
+.countdown_section {
+    font-size: 0.5em;
+
+}
+
+.countdown_amount {
+    font-size: 12em;
+    margin: 0 10px;
+}
