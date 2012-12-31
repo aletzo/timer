@@ -7,9 +7,9 @@ A simple timer for working out
 installation
 ============
 
-1. cd WHEREVER
+1. cd WEB_ROOT
 2. git clone http://github.com/aletzo/timer.git timer
-3. In a Web Browser go to: file://WHEREVER/timer
+3. In a Web Browser go to: http://localhost/timer
 
 
 usage
