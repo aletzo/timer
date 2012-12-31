@@ -1,18 +1,16 @@
-function startLap() {
-    console.log(localStorage.lapDuration);
-
-    var duration = localStorage.lapDuration.split( ':' ),
+function startRound() {
+    var duration = localStorage.roundDuration.split( ':' ),
         time     = moment().add( 'minutes', duration[0] )
                            .add( 'seconds', duration[1] );
 
-    $( '#laps span' ).html( + $( '#laps span' ).html() + 1 );
+    $( '#rounds span' ).html( + $( '#rounds span' ).html() + 1 );
 
     $( 'body' ).removeClass( 'break' );
 
     $( '#breakTime' ).countdown( 'destroy' ); 
-    $( '#lapTime' ).countdown( 'destroy' ); 
+    $( '#roundTime' ).countdown( 'destroy' ); 
 
-    $( '#lapTime' ).countdown( {
+    $( '#roundTime' ).countdown( {
         format: 'MS',
         onExpiry: function() {
             startBreak();
@@ -31,12 +29,12 @@ function startBreak() {
     $( 'body' ).addClass( 'break' );
 
     $( '#breakTime' ).countdown( 'destroy' ); 
-    $( '#lapTime' ).countdown( 'destroy' ); 
+    $( '#roundTime' ).countdown( 'destroy' ); 
 
     $( '#breakTime' ).countdown( {
         format: 'MS',
         onExpiry: function() {
-            startLap();
+            startRound();
         },
         until: time.toDate()
     } ); 
@@ -44,20 +42,20 @@ function startBreak() {
     $( '#pause' ).removeClass( 'hidden' );
 }
 
-if ( localStorage.lapDuration.length ) {
-    $( '#lapDuration input' ).val( localStorage.lapDuration );
+if ( localStorage.roundDuration ) {
+    $( '#roundDuration input' ).val( localStorage.roundDuration );
 } else {
-    localStorage.lapDuration = $( '#lapDuration input' ).val();
+    localStorage.roundDuration = $( '#roundDuration input' ).val();
 }
 
-if ( localStorage.breakDuration.length ) {
+if ( localStorage.breakDuration ) {
     $( '#breakDuration input' ).val( localStorage.breakDuration );
 } else {
     localStorage.breakDuration = $( '#breakDuration input' ).val();
 }
 
-$( '#lapDuration input' ).blur( function() {
-    localStorage.lapDuration = $( this ).val();
+$( '#roundDuration input' ).blur( function() {
+    localStorage.roundDuration = $( this ).val();
 } );
 
 $( '#breakDuration input' ).blur( function() {
@@ -70,14 +68,14 @@ $( '#start' ).click( function() {
     $( this ).addClass( 'hidden' );
     $( '#reset' ).removeClass( 'hidden' );
 
-    startLap();
+    startRound();
 } );
 
 $( '#reset' ).click( function() {
-    $( '#lapTime' ).countdown( 'destroy' ); 
+    $( '#roundTime' ).countdown( 'destroy' ); 
     $( '#breakTime' ).countdown( 'destroy' ); 
 
-    $( '#lapTime' ).html( "pain is weakness leaving the body" );
+    $( '#roundTime' ).html( "pain is weakness leaving the body" );
 
     $( this ).addClass( 'hidden' );
 
@@ -87,7 +85,7 @@ $( '#reset' ).click( function() {
 
     $( 'body' ).removeClass( 'break' );
 
-    $( '#laps span' ).html( '0' );
+    $( '#rounds span' ).html( '0' );
 } );
 
 $( '#pause').toggle( function() { 
@@ -96,7 +94,7 @@ $( '#pause').toggle( function() {
         if ( $( 'body' ).hasClass( 'break' ) ) {
             $( '#breakTime' ).countdown( 'pause' ); 
         } else {
-            $( '#lapTime' ).countdown( 'pause' ); 
+            $( '#roundTime' ).countdown( 'pause' ); 
         }
     }, 
     function() { 
@@ -105,7 +103,7 @@ $( '#pause').toggle( function() {
         if ( $( 'body' ).hasClass( 'break' ) ) {
             $( '#breakTime' ).countdown( 'resume' ); 
         } else {
-            $( '#lapTime' ).countdown( 'resume' ); 
+            $( '#roundTime' ).countdown( 'resume' ); 
         }
     } 
 ); 

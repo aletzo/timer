@@ -14,7 +14,7 @@
     <body>
         <div id="page">
 
-            <label id="lapDuration">lap duration <input type="text" value="1:00" /> <small>( mm:ss )</small></label>
+            <label id="roundDuration">round duration <input type="text" value="1:00" /> <small>( mm:ss )</small></label>
             <label id="breakDuration">break duration <input type="text" value="1:00" /> <small>( mm:ss )</small></label>
             <a href="#" id="start">start</a>
             <a href="#" id="reset" class="hidden">reset</a>
@@ -23,11 +23,15 @@
             <br />
             <br />
 
-            <p id="laps"><span>0</span> <small>current lap</small></p>
+            <p id="rounds"><span>0</span> <small>current round</small></p>
 
-            <p id="lapTime">pain is weakness leaving the body</p>
+            <p id="roundTime">pain is weakness leaving the body</p>
             <p id="breakTime"></p>
+
         </div>
+        <footer>
+            <div id="footer"><a href="http://mydevnull.net" target="_blank">~/dev/null</a></div>
+        </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>

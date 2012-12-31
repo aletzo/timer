@@ -23,7 +23,7 @@ label {
     right: 10px;
     top: 10px;
 }
-#lapDuration {
+#roundDuration {
     top: 10px;
 }
 #breakDuration {
@@ -34,7 +34,7 @@ p {
     text-align: center;
 }
 
-.break #lapTime {
+.break #roundTime {
     display: none;
 }
 
@@ -59,7 +59,7 @@ label input {
     font-size: 1.2em;
 }
 
-#laps span {
+#rounds span {
     font-size: 4em;
 }
 a {
@@ -80,4 +80,23 @@ a:hover {
 .countdown_amount {
     font-size: 12em;
     margin: 0 10px;
+}
+
+#footer {
+    margin: 50px auto 0;
+    text-align: center;
+    width: 500px;
+}
+
+#footer a {
+    background: transparent;
+    color: #444;
+    font-size: 0.4em;
+    margin: 0;
+    padding: 0 2px;
+    text-decoration: none;
+}
+#footer a:hover {
+    background: #444;
+    color: #fff;
 }
